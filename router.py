@@ -4,6 +4,6 @@ from webapp2 import Route
 
 app = WSGIApplication(
     routes=[
-        Route('/', handler='')
+        Route('/', handler='app.home.Home')
     ]
 )
