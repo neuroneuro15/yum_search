@@ -23,10 +23,17 @@
 
             },
             error: function (response) {
-                var ajax_errors = $('#ajax-errors')
+
+                console.log(response);
+
+
+                var ajax_errors = $('#ajax-errors');
+                var title = response.responseJSON['title'];
+                var message = response.responseJSON['message'];
+
                 ajax_errors.css('display', 'block');
-                ajax_errors.find('strong').html('Title');
-                ajax_errors.find('span').html('Message');
+                ajax_errors.find('strong').html(title);
+                ajax_errors.find('span').html(message);
 
             },
             complete: function(){

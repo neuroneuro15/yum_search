@@ -18,3 +18,10 @@ class YumSearchRequestHandler(RequestHandler):
         html_from_template = jinja_template.render(kwargs)
 
         self.response.out.write(html_from_template)
+
+    def json_response(self, status_code=200, **kwargs):
+        from json import dumps
+
+        self.response.status = status_code
+        self.response.headers['Content-Type'] = 'application/json'
+        self.response.out.write(dumps(kwargs))
