@@ -21,6 +21,6 @@ class Users(ndb.Model):
             return {
                 'created': False,
                 'title': 'This email is already in use',
-                'message': 'Please log in if this is your email account'.
+                'message': 'Please log in if this is your email account'
             }
 
