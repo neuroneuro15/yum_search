@@ -23,6 +23,10 @@
 
             },
             error: function (response) {
+                var ajax_errors = $('#ajax-errors')
+                ajax_errors.css('display', 'block');
+                ajax_errors.find('strong').html('Title');
+                ajax_errors.find('span').html('Message');
 
             },
             complete: function(){
